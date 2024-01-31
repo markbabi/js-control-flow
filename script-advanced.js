@@ -30,6 +30,18 @@ if (age >= 18) {
   console.log("Live in the blissful ignorance of youth");
 }
 
+// nested if..else
+//---------------------------
+if (alive === true) {
+  if (age >= 18) {
+    console.log("I vote that Mark should be fired immediatly");
+  } else {
+    console.log("Live in the blissful ignorance of youth");
+  }
+} else {
+  console.log("You dead, what are you doing trying to vote???");
+}
+
 // if..else if..else statements
 //---------------------------
 let hour = 18;
@@ -45,6 +57,22 @@ if (hour < 12) {
 
 console.log(action);
 
+// switch statement
+//---------------------------
+
+let food = "potato";
+
+switch (food) {
+  case "carrot":
+    console.log("chomp chomp");
+    break;
+  case "potato":
+    console.log("boil it, mash it, stick it in a stew");
+    break;
+  default:
+    console.log("eat it");
+}
+
 /*
  * Loops
  * ===========================
@@ -52,22 +80,41 @@ console.log(action);
 
 // for loops
 //---------------------------
+for (let i = 0; i < 130; i++) {
+  console.log(i);
+}
 
-// BASIC FOR LOOP TEMPLATE
-// - this will loop 10 times
-// - changing the 10 will change how many times it loops
-for (let i = 0; i < 10; i++) {
+console.log("next loop");
+for (let i = 9; i >= 0; i--) {
+  console.log(i);
+}
+
+console.log("next loop");
+for (let i = 0; i < 10; i += 2) {
   console.log(i);
 }
 
 // for loop to iterate(loop) through an array
 // -----------------------------------------
 let dogs = ["lab", "pitbull", "terrier", "golden", "cutie"];
-console.log(dogs.length); // the number of elements in the array
+console.log(dogs.length);
 
 for (let i = 0; i < dogs.length; i++) {
   console.log(dogs[i]);
 }
+
+// for loop search for product
+//-------------------------------------------
+let products = ["toothbrush", "backpack", "taco", "pencil"];
+let tacoFound = false;
+
+for (let i = 0; i < products.length; i++) {
+  if (products[i] === "taco") {
+    tacoFound = true;
+    break;
+  }
+}
+console.log("tacoFound: ", tacoFound);
 
 // while loops
 //-------------------------------------------
@@ -77,3 +124,12 @@ while (i < 10) {
   console.log(i);
   i++;
 }
+
+let number = Math.floor(Math.random() * 100);
+let timesRun = 0;
+
+while (number !== 50) {
+  number = Math.floor(Math.random() * 100);
+  timesRun++;
+}
+console.log(timesRun);
